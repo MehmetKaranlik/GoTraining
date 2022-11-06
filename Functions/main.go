@@ -1,6 +1,7 @@
 package main
 
 func main() {
+
 	// how to declare function variable
 	functionVariable := func() {}
 	// how to call function variable

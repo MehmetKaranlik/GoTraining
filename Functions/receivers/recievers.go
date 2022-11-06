@@ -24,6 +24,7 @@ func (s SemanticVersion) EqualityCheck(other SemanticVersion) bool {
 	return s.major == other.major && s.minor == other.minor && s.patch == other.patch
 }
 
+// this is a pointer receiver because we are modifying the value of the receiver
 // pointer typed receivers
 func (s *SemanticVersion) IncrementMajor() {
 	s.major++
