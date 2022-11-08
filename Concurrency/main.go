@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"mhmtkrnlk.com/concurrency/asynchronous"
-	"mhmtkrnlk.com/concurrency/basics"
+	"mhmtkrnlk.com/concurrency/channels"
 )
 
 // when it came to parallelism, less is more! Use concurrency to achieve parallelism.
@@ -22,10 +21,20 @@ func main() {
 		fmt.Println("Hello from goroutine")
 	}()
 
-	basics.GoLoop()
-	basics.ThreadLoop()
+	///asynchronous
 
-	asynchronous.GetTodos()
+	//basics.GoLoop()
+	//basics.ThreadLoop()
+	//
+	//asynchronous.GetTodos()
+
+	//channels
+
+	//channels.UseBasicChannel()
+	//channels.BufferedChannels()
+	//channels.ClosingChannel()
+	channels.HandlePushing()
+
 	//This particular function is going to make main goroutine wait for 5 seconds before exiting.
 	//If we don't do this, the program will exit before the goroutine has a chance to run.
 	time.Sleep(5 * time.Second)
