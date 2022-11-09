@@ -1,5 +1,7 @@
 package patterns
 
+import "mhmtkrnlk.com/goroutines_channels/models"
+
 // in general callbacks involves two functions
 
 // 1- long running function that takes second function as a parameter
@@ -8,10 +10,13 @@ package patterns
 
 // callback pattern
 
-/*
-	purchaseOrder := new(models.PurchaseOrder)
-	callback := make(chan *models.PurchaseOrder)
-	go models.SavePO(purchaseOrder, callback)
-	po := <-callback
-	println(po.Number)
-*/
+var PurchaseOrder = new(models.PurchaseOrder)
+var Callback = make(chan *models.PurchaseOrder)
+
+func SavePo() {
+	go func() {
+		go models.SavePO(PurchaseOrder, Callback)
+		po := <-Callback
+		println(po.Number)
+	}()
+}
