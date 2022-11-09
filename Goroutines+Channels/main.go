@@ -24,13 +24,5 @@ func main() {
 		fmt.Scanln()
 	*/
 
-	// callback pattern
 
-	/*
-		purchaseOrder := new(models.PurchaseOrder)
-		callback := make(chan *models.PurchaseOrder)
-		go models.SavePO(purchaseOrder, callback)
-		po := <-callback
-		println(po.Number)
-	*/
 }

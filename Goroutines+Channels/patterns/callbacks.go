@@ -6,3 +6,12 @@ package patterns
 
 // 2- second function  typicaly designed to receive the result of the first function
 
+// callback pattern
+
+/*
+	purchaseOrder := new(models.PurchaseOrder)
+	callback := make(chan *models.PurchaseOrder)
+	go models.SavePO(purchaseOrder, callback)
+	po := <-callback
+	println(po.Number)
+*/
