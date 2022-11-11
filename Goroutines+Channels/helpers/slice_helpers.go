@@ -7,7 +7,7 @@ func (slice *Slice[T, V]) Append(item T) {
 }
 
 func (slice *Slice[T, V]) Remove(item T) {
-	index := slice.IndexOfOrNil(item)
+	index := slice.IndexOf(item)
 	if index == -1 {
 		return
 	}
@@ -20,7 +20,7 @@ func (slice *Slice[T, V]) RemoveAt(index int) {
 	*slice = append((*slice)[:index], (*slice)[index+1:]...)
 }
 
-func (slice *Slice[T, V]) IndexOfOrNil(item T) int {
+func (slice *Slice[T, V]) IndexOf(item T) int {
 	for i, v := range *slice {
 		if v == item {
 			return i

@@ -24,5 +24,16 @@ func main() {
 		fmt.Scanln()
 	*/
 
+	///Promise Pattern
+	/*	this is how its used.
+
+			promise := patterns.MakePromise()
+			promise.Then(func(result interface{}) error {
+			println(result.(string))
+			return nil
+			},	 func(err error) {
+				println(err.Error())
+		})
+	*/
 
 }
